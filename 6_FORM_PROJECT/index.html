@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venda seu carro</title>
+    <title>Venda seu tênis</title>
     <link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body>
-    <div class="container">
+    <div class="container">       
         <div class="header">
-            <h3>Cadastre seu veículo para vende-lo mais rápido</h3>
+            <h3>Cadastre seu tênis para vende-lo mais rápido</h3>
         </div>
     </div>
     <div class="form-container">
@@ -18,7 +18,7 @@
             <p>Formulário</p>
         </div>
         <div class="form-body">
-            <h1 class="form-title">Venda fácil seu carro!</h1>
+            <h1 class="form-title">Venda fácil seu tênis!</h1>
             <p>
                 Descreva as características e marque os opcionais que ele possui
             </p>
@@ -31,9 +31,9 @@
                     name="title" 
                     id="title" 
                     class="block" 
-                    placeholder="Um título para anunciar o seu carro"
+                    placeholder="Um título para anunciar o seu tênis"
                     minlength="1"
-                    maxlength="30"
+                    maxlength="40"
                     required
                     >
                 </div>
@@ -53,19 +53,27 @@
                     <label for="description">
                         Descrição <span class="required-field">*</span>
                     </label>
-                    <textarea name="description" id="description" class="block" placeholder="Descreva seu veículo com detalhes, por exemplo, se ele tem algum arranhão ou peça que não seja original"></textarea>
+                    <textarea name="description" id="description" class="block" placeholder="Descreva seu tênis com detalhes, por exemplo, se ele tem é novo ou usado, se possui alguma marca de uso, etc"></textarea>
                 </div>
                 <div class="box-input">
                     <label for="brand">
                         Marca <span class="required-field">*</span>
                     </label>
                     <input type="text" 
+                    list="brands"
                     name="brand" 
                     id="brand" 
                     class="block" 
-                    placeholder="Escreva a marca do veículo"
+                    placeholder="Escreva a marca do tênis"
                     required
                     >
+                    <datalist id="brands">
+                        <option value="Nike"></option>
+                        <option value="Adidas"></option>
+                        <option value="Bape"></option>
+                        <option value="Jordan"></option>
+                        <option value="Vans"></option>
+                    </datalist>
                 </div>
                 <div class="box-input">
                     <label for="model">
@@ -75,83 +83,34 @@
                     name="model" 
                     id="model" 
                     class="block" 
-                    placeholder="Escreva o modelo do veículo"
+                    placeholder="Escreva o modelo do tênis"
                     required
                     >
                 </div>
                 <div class="box-input">
-                    <label for="mileage">
-                        Kilometragem <span class="required-field">*</span>
-                    </label>
-                    <input type="number" 
-                    name="mileage" 
-                    id="mileage" 
-                    class="block" 
-                    placeholder="Escreva a kilometragem do veículo"
-                    required
-                    >
-                </div>
-                <div class="box-input">
-                    <label for="purchase_date">
-                        Data de compra <span class="required-field">*</span>
-                    </label>
-                    <input type="date" 
-                    name="purchase_date" 
-                    id="purchase_date" 
-                    class="block" 
-                    required
-                    >
-                </div>
-                <div class="box-input">
-                    <p>Tipo de câmbio: <span class="required-field">*</span></p>
-                    <input type="radio" name="gear" id="manual">
-                    <label for="manual">Manual</label>
-                    <input type="radio" name="gear" id="auto">
-                    <label for="auto">Automático</label>
+                    <p>Estado: <span class="required-field">*</span></p>
+                    <input type="radio" name="condition" id="new">
+                    <label for="new">Novo</label>
+                    <input type="radio" name="condition" id="used">
+                    <label for="used">Usado</label>
                 </div>
                 <div class="optional-box">
                     <p>Opcionais</p>
                     <ul class="optional-list">
                         <li>
-                            <input type="checkbox" name="optional[]" id="airbag" value="airbag">
-                            <label for="airbag">Airbag</label>
+                            <input type="checkbox" name="optional[]" id="laces" value="laces">
+                            <label for="laces">Extra Laces</label>
                         </li>
                         <li>
-                            <input type="checkbox" name="optional[]" id="alarm" value="alarm">
-                            <label for="alarm">Alarme</label>
+                            <input type="checkbox" name="optional[]" id="box" value="box">
+                            <label for="box">Caixa Original</label>
                         </li>
-                        <li>
-                            <input type="checkbox" name="optional[]" id="ac" value="ac">
-                            <label for="ac">Ar-condicionado</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="optional[]" id="reverse_camera" value="reverse_camera">
-                            <label for="reverse_camera">Câmera de ré</label>
-                        </li>
+                        
                     </ul>
                 </div>
-                <div class="optional-box">
-                    <ul class="optional-list">
-                        <li>
-                            <input type="checkbox" name="optional[]" id="lane_assist" value="lane_assist">
-                            <label for="lane_assist">Assistente de Pista</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="optional[]" id="keyless" value="keyless">
-                            <label for="keyless">Partida Keyless</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="optional[]" id="smartphone" value="smartphone">
-                            <label for="smartphone">Apple Carplay</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="optional[]" id="leather_seat" value="leather_seat">
-                            <label for="leather_seat">Banco de couro</label>
-                        </li>
-                    </ul>
-                </div>
+                
                 <div class="box-input">
-                    <p>Fotos do Carro <span class="required-field">*</span></p>
+                    <p>Fotos do Tênis <span class="required-field">*</span></p>
                     <input type="file" multiple accept="image/png, image/jpg" id="images" name="images" required>
                 </div>
                 <input type="submit" value="Enviar" class="btn-submit">
